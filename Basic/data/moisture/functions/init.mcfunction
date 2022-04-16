@@ -16,3 +16,10 @@ execute as @a if score @s mos.value matches ..-1 run scoreboard players set @s m
 ## 수분 100% 이하 유지
 execute as @a if score @s mos.value matches 101.. run scoreboard players set @s mos.value 100
 execute as @a if score @s mos.value matches 101.. run scoreboard players set @s mos.tick 0
+
+## 음식 섭취
+execute as @a[nbt={Inventory:[{id:"minecraft:cactus",Slot:-106b}]}] run clear @s cactus 1
+execute as @a[nbt={Inventory:[{id:"minecraft:cactus",Slot:-106b}]}] run scoreboard players add @s mos.value 5
+execute as @a[nbt={Inventory:[{id:"minecraft:cactus",Slot:-106b}]}] run playsound minecraft:entity.player.burp master @s
+execute as @a[nbt={Inventory:[{id:"minecraft:cactus",Slot:-106b}]}] run item replace entity @s weapon.mainhand from entity @s weapon.offhand
+execute as @a[nbt={Inventory:[{id:"minecraft:cactus",Slot:-106b}]}] run item replace entity @s weapon.offhand with air

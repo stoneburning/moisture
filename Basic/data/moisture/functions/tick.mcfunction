@@ -1,0 +1,1 @@
+execute as @a[scores={mos.boolean=1}] run function moisture:init
